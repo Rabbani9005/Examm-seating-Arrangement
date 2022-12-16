@@ -1,0 +1,1508 @@
+*,
+body
+{
+    padding: 0;
+    margin: 0;
+}
+
+::-webkit-scrollbar
+{
+    width: 6px;
+}
+
+::-webkit-scrollbar-track
+{
+    background: rgb(219, 219, 219);
+}
+
+::-webkit-scrollbar-thumb
+{
+    border-radius: 4px;
+    background: gray;
+    box-shadow: inset 0 0 4px 0 rgb(73, 73, 73);
+}
+
+@font-face
+{
+    font-family: 'logo';
+    src: url('../fonts/titles.ttf');
+}
+
+@font-face
+{
+    font-family: 'heading';
+    src: url('../fonts/heads.ttf');
+}
+
+@font-face
+{
+    font-family: 'text';
+    src: url('../fonts/texts.html');
+}
+
+@font-face
+{
+    font-family: 'italic';
+    src: url('../fonts/italic.ttf');
+}
+
+/* --------------------------------------------------------- Launch ------------------------------------------------------------------ */
+
+div.launch
+{
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+div.launch .bg
+{
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    width: 100%;
+}
+
+div.launch .lnchnav
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: teal;
+    border-bottom: 2px solid teal;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+
+div.launch .lnchnav div
+{
+    padding: 10px;
+}
+
+div.launch .lnchnav div.title
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.launch .lnchnav div.title span.head
+{
+    color: white;
+    font-size: 40px !important;
+    font-family: 'logo';
+    font-weight: bold;
+}
+
+div.launch .lnchnav div.title span.foot
+{
+    font-size: 25px;
+    color: white;
+    font-family: 'modal';
+}
+
+div.launch .lnchnav div.logo
+{
+    width: 120px;
+    height: 120px;
+}
+
+div.launch .lnchnav div.logo img
+{
+    width: 100%;
+}
+
+div.launch .bg img
+{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(0) opacity(60%);
+}
+
+div.launch .body
+{
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+    margin-top: 5%;
+}
+
+div.launch .body .content
+{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    align-self: center;
+    margin: 2%;
+    padding: 10px;
+    color: gray;
+}
+
+div.launch .body .content img
+{
+    width: 200px;
+}
+
+div.launch .body .content h1
+{
+    padding: 20px;
+    margin: 1%;
+    margin-bottom: unset;
+    padding-bottom: unset;
+    margin-top: unset;
+    padding-top: unset;
+    margin-left: 10%;
+    font-family: 'logo';
+    font-size: 45px;
+    color: teal;
+}
+
+div.launch .body .content span
+{
+    font-size: 26px;
+    padding-top: 35px;
+    padding-left: 20px;
+    margin-left: 10%;
+    font-family: 'logo';
+}
+
+div.launch .body .content span q
+{
+    color: gray;
+    font-family: 'modal';
+    font-size: 24px;
+}
+
+div.launch .body .content span button
+{
+    width: 40%;
+    background: teal;
+    color: white;
+    padding: 10px;
+    border: 1px solid teal;
+    border-radius: 40px;
+    font-size: 18px;
+    font-family: 'modalhead';
+    cursor: pointer;
+    transition: .3s;
+    position: relative;
+}
+
+div.launch .body .content span button::after
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: gray;
+    padding: 10px;
+}
+
+div.launch .body .content span button:hover
+{
+    box-shadow: 0 0 10px 0 teal;
+}
+
+div.launch .body .content .cdwn
+{
+    color: teal;
+    font-family: 'modalhead';
+    display: none;
+}
+
+div.launch .body .content .count
+{
+    font-weight: bold;
+    font-size: 80px;
+    display: none;
+}
+
+div.launch span.count
+{
+    color: brown !important;
+}
+
+div.launch .body .content .cdwn.active,
+div.launch .body .content .count.active
+{
+    display: block;
+}
+
+div.launch .body div.img
+{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    width: 80%;
+}
+
+div.launch .body div.img img
+{
+    width: 80%;
+    border-radius: 4px;
+    /* box-shadow: 0 0 10px 0 rgba(73, 73, 73, 0.452); */
+    filter: opacity(100%) grayscale(0);
+}
+
+div.launch .body .content span button.cmp
+{
+    display: none;
+}
+
+/* --------------------------------------------------------------- Modal -------------------------------------------------------------- */
+
+.modal
+{
+    position: fixed;
+    top: -30%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 99999;
+    transition: .4s ease-out;
+}
+
+.modal.active
+{
+    top: 0%;
+    opacity: 1;
+    pointer-events: all;
+}
+
+@font-face
+{
+    font-family: 'modal';
+    src: url('../fonts/modaldesign.ttf');
+}
+
+@font-face
+{
+    font-family: 'modalhead';
+    src: url('../fonts/modal.ttf');
+}
+
+.modal .bg
+{
+    position: fixed;
+    content: '';
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.801);
+    transition-delay: .3s;
+    z-index: -1;
+}
+
+.modal .content
+{
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-52%) translateX(-50%);
+    max-height: 100%;
+    width: 90%;
+    background: white;
+    margin: 1%;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 0 20px 0 rgb(204, 204, 204);
+}
+
+.modal .content::after
+{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f5f5f5 url('../imgs/logo.png') no-repeat;
+    background-position: center;
+    opacity: 10%;
+    background-size: 30%;
+    z-index: -1;
+}
+
+.modal .content h1
+{
+    text-align: center;
+    color: orange;
+    font-family: 'modal';
+    margin: .5em;
+    margin-top: unset;
+    font-size: 30px !important;
+}
+
+.modal .content div.master
+{
+    padding: 0 2em;
+    transition: .3s;
+}
+
+.modal .content div.master div.profile
+{
+    width: 260px;
+    height: 260px;
+    margin: 1em;
+    background: url('../imgs/kc-reddy.jpg');
+    border-radius: 50%;
+    float: left;
+    shape-outside: circle();
+    background-position: top center;
+    background-size: cover;
+    box-sizing: border-box;
+    border: 2px solid orange;
+}
+
+.modal .content div.master h1
+{
+    font-size: 22px !important;
+    line-height: 2em;
+    margin: unset;
+    text-align: left;
+    font-family: 'modalhead';
+    color: orange;
+}
+
+.modal .content div.master h1 q
+{
+    color: teal;
+    font-family: 'modal';
+}
+
+.modal .content div.master p.text
+{
+    color: rgb(104, 104, 104);
+    text-align: left;
+    font-family: 'modalhead';
+    font-size: 17px;
+    line-height: 2em;
+}
+
+.modal .content div.child
+{
+    margin: .5em 2em;
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); */
+    display: column;
+    columns: 2;
+    column-rule: 1px solid #ddd;
+    gap: .4em;
+}
+
+.modal .content div.child > *
+{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap: 1em;
+    box-sizing: border-box;
+    padding: 0 2em;
+}
+
+.modal .content div.child h1
+{
+    font-family: 'modal';
+}
+
+.modal .content div.child h1 q
+{
+    color: teal;
+}
+
+.modal .content div.child div.data
+{
+    align-items: center;
+    transition: .3s ease-out;
+    padding: .5em 1em;
+}
+
+.modal .content div.child div.data .img
+{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid orange;
+    overflow: hidden;
+}
+
+.modal .content div.child div.data .img img
+{
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+}
+
+.modal .content div.child div.data h1
+{
+    font-size: 18px !important;
+    text-align: left;
+    
+}
+
+.modal .content div.child div.data span
+{
+    break-inside: avoid;
+    display: block;
+    color: gray;
+    line-height: 2em;
+    margin: 0 .5em;
+}
+
+.modal .content div.child div.data span q
+{
+    font-size: 15px;
+}
+
+.modal .content div.close
+{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    /* border: 1px solid gray; */
+    border-radius: 2px;
+    cursor: pointer;
+    transition: .2s ease-in;
+}
+
+.modal .content div.close span
+{
+    color: gray;
+}
+
+.modal .content div.close:hover
+{
+    background: rgb(221, 221, 221);
+}
+
+/* ------------------------------------------------------------ Home --------------------------------------------------------------- */
+
+div.home
+{
+    background: url('../imgs/bg.jpg'), whitesmoke;
+    position: relative;
+    min-height: 100vh;
+}
+
+div.index
+{
+    background: white;
+}
+
+div.nav
+{
+    background: url('../imgs/nav.jpg');
+    object-fit: cover;
+    object-position: center;
+    position: relative;
+    z-index: 99;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+div.nav div
+{
+    padding: 6px;
+}
+
+div.nav div.bg
+{
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.712);
+    z-index: -1;
+}
+
+div.nav div.mbl
+{
+    display: none;
+}
+
+div.nav div.logo
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+div.nav div.logo div.img
+{
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+div.nav div.logo div.img img
+{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+div.nav div.logo div.title
+{
+    padding: 10px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    font-family: 'logo';
+    letter-spacing: 1px;
+}
+
+div.nav div.logo div.title span.sub
+{
+    display: none !important;
+}
+
+div.nav div.social
+{
+    display: flex;
+    flex-direction: row;
+    justify-self: right;
+    align-items: center;
+    font-family: 'text';
+}
+
+div.nav div.social span
+{
+    color: white;
+    font-family: text;
+}
+
+div.nav div.social span.head
+{
+    font-weight: bold;
+}
+
+div.nav div.links
+{
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    color: whitesmoke;
+    font-size: 16px;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+div.nav div.links div
+{
+    display: block;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: .3s;
+}
+
+div.nav div.links div::before
+{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: .6px;
+    background: white;
+    bottom: 0;
+    left: -100%;
+    transition: .3s;
+}
+
+div.nav div.links div:hover::before
+{
+    left: 0;
+}
+
+div.nav div.links div.active::before
+{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: .6px;
+    background: white;
+    bottom: 0;
+    left: 0;
+}
+
+div.body
+{
+    padding: 10px;
+    position: relative;
+    min-height: 90vh;
+}
+
+/* ------------------------------------------------------------ Error_Msg ---------------------------------------------------------------- */
+
+div.msg
+{
+	padding: 10px;
+	font-size: 15px;
+	font-weight: normal;
+}
+
+div.msg h3
+{
+	font-size: 15px;
+    font-weight: normal;
+}
+
+div.msg div
+{
+    display: flex;
+    flex-direction: row;
+	align-items: left;
+	position: relative;
+	border: unset;
+	border-radius: unset;
+	color: teal;
+	text-align: left;
+    padding: 10px;
+	background: whitesmoke;
+}
+
+div.msg div::before
+{
+	content: '';
+	position: absolute;
+    left: 0;
+    top: 0;
+	height: 100%;
+	width: 2.5px;
+	background: teal;
+}
+
+/* ------------------------------------------------------------- Login ----------------------------------------------------------------- */
+
+div.center
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+div.container
+{
+    /* display: flex;
+    flex-direction: row;
+    justify-content: center; */
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+}
+
+div.container .regulations
+{
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    width: 80%;
+}
+
+div.container .regulations h1
+{
+    text-align: center;
+    font-size: 20px !important;
+    color: teal;
+    padding: 14px;
+}
+
+div.container .regulations ul
+{
+    color: #1a2d41;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+div.container .regulations ul li
+{
+    padding: 10px;
+    list-style-type: none;
+    font-size: 17px !important;
+    font-family: 'heading';
+}
+
+div.container .regulations ul li span
+{
+    color: brown;
+    padding-bottom: 6px;
+    font-size: 20px !important;
+    font-family: 'modal';
+    font-weight: bold;
+}
+
+div.container .login
+{
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 70%;
+    padding: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.562);
+    border-radius: 2px;
+}
+
+div.container .login h1
+{
+    padding: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.562);
+    border-radius: 2px;
+    font-size: 20px;
+    width: calc(100% - 20px);
+    color: #535658;
+    background: whitesmoke;
+}
+
+div.container .login form
+{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+div.container .login form div
+{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+div.container .login form div label
+{
+    color: gray;
+    font-size: 16px !important;
+}
+
+div.container .login form div input,
+div.container .login form div select
+{
+    padding: 10px 5px;
+    width: calc(100% - 10px);
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    border-radius: 4px;
+    color: gray;
+    font-family: 'heading';
+    font-weight: bold;
+    font-size: 14px !important;
+    transition: .3s;
+}
+
+div.container .login form div select
+{
+    width: 100%;
+    cursor: pointer;
+}
+
+div.container .login form div select option
+{
+    color: gray;
+}
+
+div.container .login form div input:hover,
+div.container .login form div select:hover,
+div.container .login form div input:focus,
+div.container .login form div select:focus
+{
+    border-color: #008080;
+    color: brown;
+    box-shadow: 0 0 0 3px #00808040;
+}
+
+div.container .login form div.filled input,
+div.container .login form div.filled select
+{
+    border-color: #008080;
+    color: brown;
+}
+div.container .login form input:disabled,
+div.container .login form select:disabled,
+div.container .login form input.disabled,
+div.container .login form select.disabled
+{
+    background: #e3e3e3;
+    border-color: gray !important;
+    color: gray !important;
+}
+
+div.container .login form div.link
+{
+    color: gray;
+}
+
+div.container .login form div.link a
+{
+    color: teal;
+    text-decoration: none;
+}
+
+div.container .login form div.link a:hover
+{
+    text-decoration: underline;
+}
+
+div.container .login form div.submit button
+{
+    padding: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.562);
+    border-radius: 4px;
+    font-family: serif;
+    color: white;
+    cursor: pointer;
+    background-color: teal;
+    transition: .3s;
+}
+
+div.container .login form div.submit button:disabled
+{
+    background-color: #00b3b3;
+}
+
+div.container .login form div.submit button:hover
+{
+    box-shadow: 0 0 0 3px #00808040;
+}
+
+/* --------------------------------------------------------- Registrations ------------------------------------------------------------- */
+
+div.container.registrations
+{
+    grid-template-columns: 100%;
+}
+
+div.container.registrations div.login
+{
+    width: 40%;
+    margin: 1em 0;
+}
+
+/* -------------------------------------------------------------- footer --------------------------------------------------------------- */
+
+div.footer
+{
+    padding: 14px;
+    background: url('../imgs/nav.jpg');
+    position: relative;
+    z-index: 99;
+    text-align: center;
+}
+
+div.footer::before
+{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.767);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+div.footer span
+{
+    color: white;
+}
+
+/* ----------------------------------------------------------- Developer --------------------------------------------------------------- */
+
+.footer span.tgl
+{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+}
+
+.footer span.tgl i
+{
+    padding: 10px;
+    cursor: pointer;
+}
+
+.footer div.developer
+{
+    position: absolute;
+    bottom: 110%;
+    right: 5px;
+    background: transparent;
+    border-radius: 4px;
+    height: 0px;
+    opacity: 0;
+    overflow: hidden;
+    transition: .4s;
+}
+
+.footer div.developer div.info
+{
+    display: none;
+}
+
+.footer div.developer.active
+{
+    height: max-content;
+    opacity: 1;
+    background: rgb(43, 43, 43);
+    padding: 10px;
+}
+
+.footer div.developer.active div.info
+{
+    display: block;
+}
+
+.footer div.developer span
+{
+    color: white;
+    display: block;
+    padding: 6px;
+    font-family: 'modal';
+}
+
+.footer div.developer span.head
+{
+    font-size: 18px !important;
+    border-bottom: 1px solid gray;
+}
+
+.footer div.developer span.data
+{
+    font-family: 'modal';
+}
+
+.footer div.developer span.child
+{
+    font-family: 'italic';
+}
+
+.footer div.developer span.child span
+{
+    font-family: 'modal';
+    padding: unset;
+}
+
+.footer div.developer span.img
+{
+    display: flex;
+    justify-content: center;
+}
+
+.footer div.developer span.img img
+{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    object-position: 10% 10%;
+    border-radius: 50%;
+}
+
+/* ------------------------------------------------------------- SrchDiv ---------------------------------------------------------------- */
+
+div.searchdiv
+{
+    text-align: center;
+    padding: 10px;
+    margin: 1%;
+}
+
+div.searchdiv label
+{
+    color: teal;
+    font-size: 18px !important;
+}
+
+div.searchdiv input
+{
+    padding: 6px 4px;
+    width: 40%;
+    border: 1px solid teal;
+    color: gray;
+    border-radius: 4px;
+    font-family: text;
+    font-weight: bold;
+    transition: .3s;
+}
+
+div.searchdiv input:hover,
+div.searchdiv input:focus
+{
+    color: brown;
+    border-color: brown;
+    box-shadow: 0 0 4px 0 rgba(56, 56, 56, 0.548);
+}
+
+div.searchdiv button
+{
+    padding: 6px;
+    border: unset;
+    outline: unset;
+    background: teal;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* -------------------------------------------------------------- Pagination -------------------------------------------------------------- */
+
+.pages
+{
+    margin: 2%;
+    text-align: center;
+    border-radius: 50px;
+}
+
+.pages div
+{
+    padding: 2px;
+    display: inline-block;
+    background: white;
+    text-align: center;
+    width: max-content;
+    margin: 1%;
+    border: 1px solid teal;
+    border-radius: 20px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.pages div:hover
+{
+    background: teal;
+    border: 1px solid teal;
+    box-shadow: 0 2px 5px 0 rgb(102, 102, 102);
+}
+
+.pages div:hover a
+{
+    color: white;
+}
+
+.pages div a
+{
+    color: teal;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: cursive;
+    padding: 10px;
+}
+
+.pages div.active,
+.pages div.active.cntrl
+{
+    background: teal;
+    border-color: teal;
+    box-shadow: 0 2px 5px 0 rgb(102, 102, 102);
+}
+
+.pages div.active a
+{
+    color: white;
+    font-weight: bold;
+}
+
+/* .pages div.active
+{
+    box-shadow: unset;
+} */
+
+/* ------------------------------------------------------------ Notices -------------------------------------------------------------- */
+
+div.body div.notices
+{
+    padding: 10px;
+    margin: 1%;
+    background: rgba(255, 255, 255, 0.856);
+}
+
+div.body div.notices h1
+{
+    text-align: center;
+    font-family: 'serif';
+    font-size: 20px;
+    color: brown;
+}
+
+div.body div.notices table
+{
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+div.body div.notices table tr:nth-child(1)
+{
+    background: teal;
+}
+
+div.body div.notices table tr:nth-child(1) th
+{
+    color: white;
+    padding: 12px;
+    font-size: 18px !important;
+    font-family: 'heading';
+}
+
+div.body div.notices table tr
+{
+    cursor: pointer;
+}
+
+div.body div.notices table tr td
+{
+    padding: 10px;
+    text-align: center;
+    font-family: 'modalhead';
+    color: gray;
+}
+
+div.body div.notices table tr:nth-child(odd) td
+{
+    background: whitesmoke;
+}
+
+div.body div.notices table tr td:nth-child(2)
+{
+    text-align: left;
+}
+
+div.body div.notices table tr:hover td
+{
+    color: brown;
+    background: whitesmoke;
+}
+
+div.body div.notices div.result
+{
+    background: teal;
+    padding: 10px;
+    margin-bottom: 1%;
+    border-radius: 2px;
+    text-align: center;
+}
+
+div.body div.notices div.result span
+{
+    color: white;
+    font-family: 'heading';
+    font-weight: bolder;
+}
+
+/* ----------------------------------------------------------- Meaage -------------------------------------------------------------- */
+.message
+{
+    padding: 10px;
+    font-size: unset !important;
+    margin: 2%;
+    background: white;
+}
+
+.message div.title,
+.message div.sign
+{
+    padding: 10px;
+    text-align: center;
+    color: teal;
+    background: whitesmoke;
+    font-family: 'modalhead';
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.message div.time
+{
+    padding: 10px;
+    text-align: left;
+    color: brown;
+    margin-top: 2%;
+}
+
+.message div.time span
+{
+    color: teal;
+    font-weight: bold !important;
+    font-size: 16px !important;
+    font-family: 'text';
+}
+
+.message div.sign
+{
+    font-weight: bold;
+    color: brown;
+    cursor: initial;
+}
+
+.message div.sign span
+{
+    color: teal;
+}
+
+.message div.msg {
+    margin: .5em;
+}
+
+.message div.attachments
+{
+    padding: .5em;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1em;
+    margin-bottom: 1em;
+}
+
+.message div.attachments .file
+{
+    position: relative;
+    height: 200px;
+    border: 1px solid #ddd;
+    border-radius: .3rem;
+    overflow: hidden;
+    box-shadow: 0 0 0 3px #ddddddcc;
+    transition: .1s ease-out;
+}
+
+.message div.attachments .file:hover
+{
+    cursor: pointer;
+    box-shadow: 0 0 0 4px #0080803f;
+}
+
+.message div.attachments .file > *:first-child
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    text-transform: uppercase;
+    color: #b3bdbd;
+    font-size: clamp(1.5em, 2.5vw, 2em) !important;
+    font-weight: bold;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+}
+
+.message div.attachments .file .det
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 1.5em);
+    padding: .75em;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+/* ------------------------------------------------------------- About --------------------------------------------------------------- */
+
+.about
+{
+    text-align: center;
+    background: white;
+    display: flex;
+    justify-content: center;
+}
+
+.about .contain
+{
+    width: 80%;
+    margin-bottom: 8%;
+}
+
+.about .contain .pair
+{
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-column-gap: 14px;
+    grid-row-gap: 20px;
+}
+
+.about .contain .pair h1
+{
+    grid-column: 1/-1;
+    padding: 10px;
+    color: brown;
+    font-size: 25px;
+    font-family: 'heading';
+}
+
+.about div.card
+{
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid rgb(201, 201, 201);
+    border-radius: 4px;
+    transition: .3s;
+    overflow: hidden;
+}
+
+.about div.card:hover
+{
+    transform: scale(1.01);
+    box-shadow: 0 0 10px 0 rgb(175, 175, 175);
+}
+
+.about div.card.main
+{
+    flex-direction: row;
+    align-items: center;
+    min-height: 38vh;
+    justify-content: center;
+}
+
+.about div.card.main:nth-child(even)
+{
+    grid-column: 1/3;
+}
+
+.about div.card.main:nth-child(odd)
+{
+    grid-column: 3/-1;
+}
+
+.about div.card .profile
+{
+    display: flex;
+    justify-content: center;
+}
+
+.about div.card .profile img
+{
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: top;
+    transition: .3s;
+    border-radius: 50%;
+}
+
+.about div.card.main .profile
+{
+    overflow: hidden;
+    margin-right: 14px;
+}
+
+.about div.card.main .profile img
+{
+    width: 230px;
+    height: 230px;
+    /* border-radius: 4px; */
+}
+
+.about div.card .profile:hover img
+{
+    transform: scale(1.02);
+}
+
+.about div.card div.info
+{
+    padding: 10px;
+    text-align: left;
+}
+
+.about div.card div.info div.data span
+{
+    display: block;
+    color: gray;
+    font-family: 'heading';
+    padding: 10px;
+}
+
+.about div.card div.info div.data span.head
+{
+    font-size: 18px !important;
+    font-weight: bold;
+    /* text-transform: uppercase; */
+}
+
+.about div.card div.info div.data span.child
+{
+    font-size: 14px !important;
+}
+
+.about div.card div.social i
+{
+    padding: 10px;
+    color: teal;
+    cursor: pointer;
+}
+
+/* -------------------------------------------------------------------- Spinners ---------------------------------------------------------------------- */
+
+@keyframes spinner-border {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes spinner-grow {
+	0% {
+		transform: scale(0);
+	}
+
+	50% {
+		opacity: 1;
+	}
+}
+
+.spinner-border {
+	display: inline-block;
+	width: 2rem;
+	height: 2rem;
+	vertical-align: text-bottom;
+	border: .1em solid currentColor;
+	border-right-color: transparent;
+	border-radius: 50%;
+	animation: spinner-border .75s linear infinite;
+}
+
+.spinner-border-sm {
+	width: 1rem;
+	height: 1rem;
+	border-width: .1em;
+}
+
+.spinner-grow {
+	display: inline-block;
+	width: 2rem;
+	height: 2rem;
+	vertical-align: text-bottom;
+	background-color: currentColor;
+	border-radius: 50%;
+	opacity: 0;
+	animation: spinner-grow .75s linear infinite;
+}
+
+.spinner-grow-sm {
+	width: 1rem;
+	height: 1rem;
+}

@@ -1,0 +1,7 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+hms.rguktsklm.ac.in	TRUE	/	FALSE	1999999999	PHPSESSID	db8ebc0c59fdfd28d6904d3bf66008ad
+hms.rguktsklm.ac.in	TRUE	/	FALSE	1999999999	hms_notice_c9f0f895fb98ab9159f51fd0297e236d	8
+hms.rguktsklm.ac.in	TRUE	/	FALSE	1999999999	hms_notice_8f14e45fceea167a5a36dedd4bea2543	7
+hms.rguktsklm.ac.in	TRUE	/	FALSE	1999999999	hms_notice_eccbc87e4b5ce2fe28308fd9f2a7baf3	3
+
